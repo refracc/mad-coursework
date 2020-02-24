@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -22,9 +24,10 @@ import java.util.List;
 import me.refracc.coursework.R;
 import me.refracc.coursework.info.Drink;
 
+@SuppressWarnings({"deprecated", "unused"})
 public class DrinkAdapter extends ArrayAdapter<Drink> {
 
-    private Context mContext;
+    private Context ctxt;
     private int mResource;
     private int lastPosition = -1;
 
@@ -38,12 +41,12 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
 
     public DrinkAdapter(Context context, int resource, List<Drink> objects) {
         super(context, resource, objects);
-        mContext = context;
+        ctxt = context;
         mResource = resource;
     }
     
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 
         //sets up the image loader library
         setupImageLoader();
@@ -62,7 +65,7 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
 
 
         if(convertView == null){
-            LayoutInflater inflater = LayoutInflater.from(mContext);
+            LayoutInflater inflater = LayoutInflater.from(ctxt);
             convertView = inflater.inflate(mResource, parent, false);
             viewHolder= new ViewHolder();
             viewHolder.name = convertView.findViewById(R.id.name_text);
@@ -80,8 +83,7 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
         }
 
 
-        Animation animation = AnimationUtils.loadAnimation(mContext,
-                (position > lastPosition) ? R.anim.load_down_anim : R.anim.load_up_anim); // Depends on scroll direction will modify the
+        Animation animation = AnimationUtils.loadAnimation(ctxt, (position > lastPosition) ? R.anim.load_down_anim : R.anim.load_up_anim); // Depends on scroll direction will modify the
         anim_result.startAnimation(animation);
         lastPosition = position;
 
@@ -92,14 +94,10 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
         //create the im object
         ImageLoader im = ImageLoader.getInstance();
 
-        int defaultImage = mContext.getResources().getIdentifier("@drawable/error",null,mContext.getPackageName());
+        int errorImage = ctxt.getResources().getIdentifier("@drawable/error",null, ctxt.getPackageName());
 
         //create display options
-        DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
-                .cacheOnDisc(true).resetViewBeforeLoading(true)
-                .showImageForEmptyUri(defaultImage)
-                .showImageOnFail(defaultImage)
-                .showImageOnLoading(defaultImage).build();
+        DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisc(true).resetViewBeforeLoading(true).showImageForEmptyUri(errorImage).showImageOnFail(errorImage).showImageOnLoading(errorImage).build();
 
         //download and display image from url
         im.displayImage(imgURL, viewHolder.image, options);
@@ -112,17 +110,8 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
      */
     private void setupImageLoader(){
         // UNIVERSAL IMAGE LOADER SETUP
-        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .cacheOnDisc(true).cacheInMemory(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .displayer(new FadeInBitmapDisplayer(300)).build();
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                mContext)
-                .defaultDisplayImageOptions(defaultOptions)
-                .memoryCache(new WeakMemoryCache())
-                .discCacheSize(100 * 1024 * 1024).build();
-
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder().cacheOnDisc(true).cacheInMemory(true).imageScaleType(ImageScaleType.EXACTLY).displayer(new FadeInBitmapDisplayer(300)).build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(ctxt).defaultDisplayImageOptions(defaultOptions).memoryCache(new WeakMemoryCache()).discCacheSize(100 * 1024 * 1024).build();
         ImageLoader.getInstance().init(config);
     }
 
