@@ -28,7 +28,7 @@ import me.refracc.coursework.info.Drink;
 public class DrinkAdapter extends ArrayAdapter<Drink> {
 
     private Context ctxt;
-    private int mResource;
+    private int resource;
     private int lastPosition = -1;
 
     
@@ -39,23 +39,23 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
         ImageView image;
     }
 
-    public DrinkAdapter(Context context, int resource, List<Drink> objects) {
-        super(context, resource, objects);
-        ctxt = context;
-        mResource = resource;
+    public DrinkAdapter(Context c, int resource, List<Drink> drinks) {
+        super(c, resource, drinks);
+        ctxt = c;
+        this.resource = resource;
     }
     
     @Override
-    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+    public View getView(int pos, View v, @NonNull ViewGroup parent) {
 
         //sets up the image loader library
         setupImageLoader();
 
         //get the persons information
-        String name = getItem(position).getName();
-        String abv = getItem(position).getAbv();
-        String volume = getItem(position).getVol();
-        String imgURL = getItem(position).getResURL();
+        String name = getItem(pos).getName();
+        String abv = getItem(pos).getAbv();
+        String volume = getItem(pos).getVol();
+        String url = getItem(pos).getResURL();
 
         //create the view anim_result for showing the animation
         final View anim_result;
@@ -64,28 +64,29 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
         ViewHolder viewHolder;
 
 
-        if(convertView == null){
+        if(v == null){
             LayoutInflater inflater = LayoutInflater.from(ctxt);
-            convertView = inflater.inflate(mResource, parent, false);
+            v = inflater.inflate(this.resource, parent, false);
             viewHolder= new ViewHolder();
-            viewHolder.name = convertView.findViewById(R.id.name_text);
-            viewHolder.abv = convertView.findViewById(R.id.abv_text);
-            viewHolder.volume = convertView.findViewById(R.id.volume_text);
-            viewHolder.image = convertView.findViewById(R.id.image);
+            viewHolder.name = v.findViewById(R.id.name_text);
+            viewHolder.abv = v.findViewById(R.id.abv_text);
+            viewHolder.volume = v.findViewById(R.id.volume_text);
+            viewHolder.image = v.findViewById(R.id.image);
 
-            anim_result = convertView;
+            anim_result = v;
 
-            convertView.setTag(viewHolder);
+            v.setTag(viewHolder);
         }
         else{
-            viewHolder = (ViewHolder) convertView.getTag();
-            anim_result = convertView;
+            viewHolder = (ViewHolder) v.getTag();
+            anim_result = v;
         }
 
 
-        Animation animation = AnimationUtils.loadAnimation(ctxt, (position > lastPosition) ? R.anim.load_down_anim : R.anim.load_up_anim); // Depends on scroll direction will modify the
+        Animation animation = AnimationUtils.loadAnimation(ctxt,
+                (pos > lastPosition) ? R.anim.load_down_anim : R.anim.load_up_anim); // Depends on scroll direction will modify the
         anim_result.startAnimation(animation);
-        lastPosition = position;
+        lastPosition = pos;
 
         viewHolder.name.setText(name);
         viewHolder.abv.setText(abv);
@@ -100,9 +101,9 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
         DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisc(true).resetViewBeforeLoading(true).showImageForEmptyUri(errorImage).showImageOnFail(errorImage).showImageOnLoading(errorImage).build();
 
         //download and display image from url
-        im.displayImage(imgURL, viewHolder.image, options);
+        im.displayImage(url, viewHolder.image, options);
 
-        return convertView;
+        return v;
     }
 
     /**
