@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">MAD Coursework</string>
+    <string name="app_name">Trackahol</string>
+
+    <!-- Button Strings -->
+    <string name="drink_volumes">Spirits &amp; Volumes</string>
+
+
+    <!-- TextView Strings -->
+    <string name="home_page">Did you know that 1 in 4 people (24%) in Scotland are at risk of harming themselves from the dangerous effects
+    of alcohol?\n\n Or that there was an estimated 94,360 appointments made with GPs by 48,420 patients in 2019? That\'s almost double the appointments
+    per patient with alcohol issues.</string>
 </resources>
