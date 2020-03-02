@@ -23,5 +23,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button mgmt = findViewById(R.id.management);
+        mgmt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent alc_mgmt = new Intent(MainActivity.this, AlcoholManagement.class);
+                startActivity(alc_mgmt);
+            }
+        });
+
     }
 }
