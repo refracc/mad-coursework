@@ -20,13 +20,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/list_data"
         android:layout_width="142dp"
         android:layout_height="122dp"
         android:layout_marginStart="31dp"
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="108dp"
-        android:text="Button"
+        android:text="@string/main_check_data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button3" />
@@ -38,8 +38,8 @@
         android:layout_marginStart="31dp"
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="27dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        android:text="@string/tips"
+        app:layout_constraintBottom_toTopOf="@+id/list_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sprits_volumes" />
 
@@ -50,9 +50,9 @@
         android:layout_marginStart="49dp"
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="108dp"
-        android:text="Button"
+        android:text="@string/main_add_data"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/list_data"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -65,6 +65,7 @@
         android:layout_marginBottom="92dp"
         android:text="@string/home_page"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/sprits_volumes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

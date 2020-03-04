@@ -19,6 +19,8 @@
 
         <activity android:name=".Volume"/>
         <activity android:name=".AlcoholManagement"/>
+        <activity android:name=".database.Add"/>
+        <activity android:name=".database.CheckData"/>
     </application>
 
 </manifest>

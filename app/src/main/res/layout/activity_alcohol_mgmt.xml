@@ -12,7 +12,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="9dp"
         android:contentDescription="@string/lager_desc"
-        android:src="@drawable/lager"
+        android:src="@drawable/beer"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +26,7 @@
         android:layout_marginEnd="9dp"
         android:text="@string/alc_mgmt_2"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -36,6 +37,7 @@
         android:layout_marginStart="9dp"
         android:text="@string/alc_mgmt_1"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -88,6 +90,7 @@
         android:layout_marginStart="9dp"
         android:text="@string/alc_mgmt_3"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -112,6 +115,7 @@
         android:layout_marginEnd="9dp"
         android:text="@string/alc_mgmt_4"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -138,6 +142,7 @@
         android:layout_marginEnd="143dp"
         android:text="@string/alc_mgmt_5"
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />

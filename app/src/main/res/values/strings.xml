@@ -3,7 +3,7 @@
 
     <!-- Button Strings -->
     <string name="drink_volumes">Spirits &amp; Volumes</string>
-    <string name="tips">Recommended Servings</string>
+    <string name="tips">Recommended Servings &amp; Limits</string>
 
 
     <!-- TextView Strings -->
@@ -11,7 +11,7 @@
     of alcohol?\n\n Or that there was an estimated 94,360 appointments made with GPs by 48,420 patients in 2019? That\'s almost double the appointments
     per patient with alcohol issues!</string>
 
-    <string name="recommended">RECOMMENDED SERVING AMOUNTS</string>
+    <string name="recommended">Need help with counting 14 units? Let me help you…</string>
     <string name="alc_mgmt_1">7 double measures of spirits (50ml @ 40% abv)</string>
     <string name="alc_mgmt_2">5 pints of lager (586ml @ 4.5% abv)</string>
     <string name="alc_mgmt_3">8 glasses of wine (175ml @ 10% abv)</string>
@@ -24,4 +24,23 @@
     <string name="wine_desc">A 175ml glass of wine at 10% abv</string>
     <string name="absinthe_desc">A 25ml shot of absinthe at 60% abv</string>
     <string name="shot_desc">A 25ml shot of spirits at 20% abv</string>
+
+    <!-- Database Strings -->
+    <string name="main_title">@string/app_name</string>
+    <string name="main_add_data">"Add Data"</string>
+    <string name="main_check_data">"Check Data"</string>
+
+    <string name="add_data_title">Fill Information</string>
+    <string name="add_data_field_name">Name:</string>
+    <string name="add_data_field_phone_number">ABV:</string>
+    <string name="add_data_field_email">Volume (include units (ml)):</string>
+    <string name="add_data_field_address">Image URL:</string>
+    <string name="add_data_button_save">Save</string>
+    <string name="add_data_button_back">Back</string>
+
+    <string name="add_next_dialog_message">"Information saved.\nAdd another drink?"</string>
+    <string name="add_next_dialog_confirm_yes">"Yes"</string>
+    <string name="add_next_dialog_confirm_no">"No"</string>
+
+    <string name="check_data_title">"NAME - ABV - VOLUME - IMG"</string>
 </resources>
