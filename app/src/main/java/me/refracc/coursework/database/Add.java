@@ -3,6 +3,7 @@ package me.refracc.coursework.database;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -29,15 +30,14 @@ public class Add extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.add_btnBack:
-                this.finish();
+                db = new Database(this);
                 break;
             case R.id.add_btnSave:
                 String name = ((EditText) findViewById(R.id.add_Name)).getText().toString();
-                String abv = ((EditText) findViewById(R.id.add_etABV)).getText().toString();
-                String volume = ((EditText) findViewById(R.id.add_etVolume)).getText().toString();
-                Object imageURL = ((EditText) findViewById(R.id.add_etImageURL)).getText().toString();
+                double abv = Double.parseDouble(((EditText) findViewById(R.id.add_etABV)).getText().toString());
+                int volume = Integer.parseInt(((EditText) findViewById(R.id.add_etVolume)).getText().toString());
                 this.db = new Database(this);
-                this.db.insert(name, abv, volume, (byte[]) imageURL);
+                this.db.insert(name, abv, volume);
 
                 showInformationSavedDialog();
 

@@ -13,7 +13,7 @@ class OpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE "
                 + Database.TABLE
-                + " (id INTEGER PRIMARY KEY, name TEXT, abv TEXT, volume TEXT, image BLOB);");
+                + " (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, abv REAL, volume REAL)");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

@@ -2,6 +2,7 @@ package me.refracc.coursework;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -41,13 +42,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(in);
                 break;
             case R.id.list_data:
-                Intent iNt = new Intent(this, CheckData.class);
-                startActivity(iNt);
+                Intent intent = new Intent(this, CheckData.class);
+                startActivity(intent);
                 break;
             case R.id.button3:
                 Intent inte = new Intent(this, Add.class);
                 startActivity(inte);
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
         }
     }
 }

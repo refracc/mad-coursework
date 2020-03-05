@@ -49,24 +49,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
-
-    <TextView
-        android:id="@+id/add_tv_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_data_field_address" />
-
-    <EditText
-        android:id="@+id/add_etImageURL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
+        android:inputType="phone" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:orientation="horizontal">
 
         <Button
@@ -83,5 +70,14 @@
             android:layout_weight="1"
             android:text="@string/add_data_button_back" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:lineSpacingExtra="12sp"
+        android:text="@string/reminder"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
 </LinearLayout>

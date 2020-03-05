@@ -26,7 +26,6 @@
     <string name="shot_desc">A 25ml shot of spirits at 20% abv</string>
 
     <!-- Database Strings -->
-    <string name="main_title">@string/app_name</string>
     <string name="main_add_data">"Add Data"</string>
     <string name="main_check_data">"Check Data"</string>
 
@@ -37,10 +36,11 @@
     <string name="add_data_field_address">Image URL:</string>
     <string name="add_data_button_save">Save</string>
     <string name="add_data_button_back">Back</string>
+    <string name="reminder">Please include the contact of alcohol ONLY.\n\nA Gin &amp; Tonic would be 25 in Volume field.</string>
 
     <string name="add_next_dialog_message">"Information saved.\nAdd another drink?"</string>
     <string name="add_next_dialog_confirm_yes">"Yes"</string>
     <string name="add_next_dialog_confirm_no">"No"</string>
 
-    <string name="check_data_title">"NAME - ABV - VOLUME - IMG"</string>
+    <string name="check_data_title">"NAME    -    ABV    -    VOLUME    -    UNITS    -     TIMESTAMP"</string>
 </resources>
