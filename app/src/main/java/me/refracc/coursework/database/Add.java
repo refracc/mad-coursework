@@ -41,11 +41,9 @@ public class Add extends Activity implements View.OnClickListener {
                 double abv = Double.parseDouble(((EditText) findViewById(R.id.add_etABV)).getText().toString());
                 int volume = Integer.parseInt(((EditText) findViewById(R.id.add_etVolume)).getText().toString());
 
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy  HH:mm:ss");
                 this.db = new Database(this);
                 this.db.insert(name, abv, volume, dtf.format(LocalDateTime.now()));
-
-                Log.d("INSERT", "this shit in the system");
 
                 showInformationSavedDialog();
 

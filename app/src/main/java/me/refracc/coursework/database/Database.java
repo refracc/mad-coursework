@@ -48,7 +48,8 @@ public class Database {
         if (cursor.moveToFirst()) {
             do {
                 String[] b1 = new String[]{cursor.getString(0),
-                        cursor.getString(1), cursor.getString(2)};
+                        cursor.getString(1), cursor.getString(2),
+                        cursor.getString(3)};
                 list.add(b1);
                 x++;
             } while (cursor.moveToNext());
