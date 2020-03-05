@@ -20,20 +20,21 @@ public class Database {
     static SQLiteStatement stmt;
 
     static final String TABLE = "drinks";
-    static final String INSERT = "INSERT INTO " + TABLE + "(name, abv, volume) VALUES (?,?,?)";
+    static final String INSERT = "INSERT INTO " + TABLE + "(name, abv, volume, date) VALUES (?,?,?,?)";
 
     public Database (Context c) {
-        this.c = c;
-        OpenHelper openHelper = new OpenHelper(this.c);
+        Database.c = c;
+        OpenHelper openHelper = new OpenHelper(Database.c);
         db = openHelper.getWritableDatabase();
-        this.stmt = db.compileStatement(INSERT);
+        stmt = db.compileStatement(INSERT);
     }
-    
-    public long insert(String name, double abv, int volume) {
-        this.stmt.bindString(1, name);
-        this.stmt.bindDouble(2, abv);
-        this.stmt.bindDouble(3, volume);
-        return this.stmt.executeInsert();
+
+    public long insert(String name, double abv, int volume, String date) {
+        stmt.bindString(1, name);
+        stmt.bindDouble(2, abv);
+        stmt.bindDouble(3, volume);
+        stmt.bindString(4, date);
+        return stmt.executeInsert();
     }
 
     public void deleteAll() {
@@ -42,7 +43,7 @@ public class Database {
 
     public List<String[]> selectAll() {
         List<String[]> list = new ArrayList<>();
-        Cursor cursor = db.query(TABLE, new String[]{"name", "abv", "volume"}, null, null, null, null, "name asc");
+        Cursor cursor = db.query(TABLE, new String[]{"name", "abv", "volume", "date"}, null, null, null, null, "name asc");
         int x = 0;
         if (cursor.moveToFirst()) {
             do {

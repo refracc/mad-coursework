@@ -6,8 +6,12 @@ import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import me.refracc.coursework.R;
 
@@ -36,8 +40,12 @@ public class Add extends Activity implements View.OnClickListener {
                 String name = ((EditText) findViewById(R.id.add_Name)).getText().toString();
                 double abv = Double.parseDouble(((EditText) findViewById(R.id.add_etABV)).getText().toString());
                 int volume = Integer.parseInt(((EditText) findViewById(R.id.add_etVolume)).getText().toString());
+
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy");
                 this.db = new Database(this);
-                this.db.insert(name, abv, volume);
+                this.db.insert(name, abv, volume, dtf.format(LocalDateTime.now()));
+
+                Log.d("INSERT", "this shit in the system");
 
                 showInformationSavedDialog();
 

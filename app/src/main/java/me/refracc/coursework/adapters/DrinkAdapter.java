@@ -31,7 +31,7 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
     private int resource;
     private int lastPosition = -1;
 
-    
+
     private static class ViewHolder {
         TextView name;
         TextView abv;
@@ -44,7 +44,7 @@ public class DrinkAdapter extends ArrayAdapter<Drink> {
         ctxt = c;
         this.resource = resource;
     }
-    
+
     @Override
     public View getView(int pos, View v, @NonNull ViewGroup parent) {
 

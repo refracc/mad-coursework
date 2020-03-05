@@ -8,9 +8,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 import me.refracc.coursework.R;
@@ -33,16 +30,15 @@ public class CheckData extends ListActivity {
         String stg;
 
         DecimalFormat df = new DecimalFormat("#.##");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         for (String[] drink : drinks) {
             double units = ((Double.parseDouble(drink[1])/100) * Integer.parseInt(drink[2])) / 10;
 
             stg = drink[0] + "    -    "
-                    + drink[1] + "    -    "
-                    + drink[2] + "    -    "
-                    + df.format(units) + " units    -    "
-                    + dtf.format(LocalDateTime.now());
+                    + drink[1] + "%    -    "
+                    + drink[2] + "ml    -    "
+                    + df.format(units) + " unit(s)    -    "
+                    + drink[3];
             stg1[x] = stg;
             x++;
         }
