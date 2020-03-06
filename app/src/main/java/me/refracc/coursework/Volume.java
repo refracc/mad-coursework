@@ -30,7 +30,7 @@ public class Volume extends Activity {
         Drink beer = new Drink("Beer", "3% ~ 7%", "568ml", "drawable://" + R.drawable.beer);
         Drink lager = new Drink("Lager", "3% ~ 8%", "586ml", "drawable://" + R.drawable.lager);
         Drink cider = new Drink("Cider", "4% ~ 7.5%", "586ml", "drawable://" + R.drawable.cider);
-        Drink warn = new Drink("RECOMMENDATION", "All drinks listed are in their", "recommended serving amounts.", null);
+        Drink warn = new Drink("*** PLEASE NOTE ***", "All drinks listed are in their", "typical serving amounts.", null);
 
         drinks.add(absinthe);
         drinks.add(spirits);

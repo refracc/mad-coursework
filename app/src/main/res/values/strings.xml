@@ -2,14 +2,17 @@
     <string name="app_name">Trackahol</string>
 
     <!-- Button Strings -->
-    <string name="drink_volumes">Spirits &amp; Volumes</string>
-    <string name="tips">Recommended Servings &amp; Limits</string>
+    <string name="drink_volumes">Drinks &amp; Typical Quantities</string>
+    <string name="tips">What 14 Units Looks Like</string>
+    <string name="main_add_data">"Add Drinks"</string>
+    <string name="main_check_data">"List Drinks"</string>
 
 
     <!-- TextView Strings -->
     <string name="home_page">Did you know that 1 in 4 people (24%) in Scotland are at risk of harming themselves from the dangerous effects
     of alcohol?\n\n Or that there was an estimated 94,360 appointments made with GPs by 48,420 patients in 2019? That\'s almost double the appointments
-    per patient with alcohol issues!</string>
+    per patient with alcohol issues!\n\nIt is recommended that you drink no more than 14 units of alcohol per week, spread over 4-5 days. Please check the button
+    labelled \'What 14 Units Looks Like\' for more information.</string>
 
     <string name="recommended">Need help with counting 14 units? Let me help you…</string>
     <string name="alc_mgmt_1">7 double measures of spirits (50ml @ 40% abv)</string>
@@ -26,19 +29,16 @@
     <string name="shot_desc">A 25ml shot of spirits at 20% abv</string>
 
     <!-- Database Strings -->
-    <string name="main_add_data">"Add Data"</string>
-    <string name="main_check_data">"Check Data"</string>
 
     <string name="add_data_title">Fill Information</string>
     <string name="add_data_field_name">Name:</string>
     <string name="add_data_field_phone_number">ABV:</string>
-    <string name="add_data_field_email">Volume (include units (ml)):</string>
-    <string name="add_data_field_address">Image URL:</string>
+    <string name="add_data_field_email">Volume (automatically in ml):</string>
     <string name="add_data_button_save">Save</string>
-    <string name="add_data_button_back">Back</string>
-    <string name="reminder">Please include the contact of alcohol ONLY.\n\nA Gin &amp; Tonic would be 25 in Volume field.</string>
+    <string name="add_data_button_back">...</string>
+    <string name="reminder">Please include the contact of alcohol ONLY.\n\nA Gin &amp; Tonic would be 25 in field \"Volume\".</string>
 
-    <string name="add_next_dialog_message">"Information saved.\nAdd another drink?"</string>
+    <string name="add_next_dialog_message">"Information saved. Add another drink?"</string>
     <string name="add_next_dialog_confirm_yes">"Yes"</string>
     <string name="add_next_dialog_confirm_no">"No"</string>
 

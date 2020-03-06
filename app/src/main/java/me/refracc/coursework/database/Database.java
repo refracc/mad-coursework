@@ -43,7 +43,7 @@ public class Database {
 
     public List<String[]> selectAll() {
         List<String[]> list = new ArrayList<>();
-        Cursor cursor = db.query(TABLE, new String[]{"name", "abv", "volume", "date"}, null, null, null, null, "name asc");
+        Cursor cursor = db.query(TABLE, new String[]{"name", "abv", "volume", "date"}, null, null, null, null, "date DESC");
         int x = 0;
         if (cursor.moveToFirst()) {
             do {

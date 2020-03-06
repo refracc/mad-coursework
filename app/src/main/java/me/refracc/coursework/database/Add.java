@@ -35,6 +35,7 @@ public class Add extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.add_btnBack:
                 db = new Database(this);
+                this.finish();
                 break;
             case R.id.add_btnSave:
                 String name = ((EditText) findViewById(R.id.add_Name)).getText().toString();
