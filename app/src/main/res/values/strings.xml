@@ -35,7 +35,7 @@
     <string name="add_data_field_phone_number">ABV:</string>
     <string name="add_data_field_email">Volume (automatically in ml):</string>
     <string name="add_data_button_save">Save</string>
-    <string name="add_data_button_back">...</string>
+    <string name="add_data_button_back">Main Menu</string>
     <string name="reminder">Please include the contact of alcohol ONLY.\n\nA Gin &amp; Tonic would be 25 in field \"Volume\".</string>
 
     <string name="add_next_dialog_message">"Information saved. Add another drink?"</string>

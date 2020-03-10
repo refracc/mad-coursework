@@ -64,6 +64,11 @@ public class Add extends Activity implements View.OnClickListener {
         builder.setNegativeButton(R.string.add_next_dialog_confirm_no,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which){
+
+                        ((EditText) findViewById(R.id.add_Name)).setText("");
+                        ((EditText) findViewById(R.id.add_etABV)).setText("");
+                        ((EditText) findViewById(R.id.add_etVolume)).setText("");
+
                         Add.this.finish();
                     }
                 });
@@ -71,6 +76,10 @@ public class Add extends Activity implements View.OnClickListener {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which){
                         dialog.cancel();
+
+                        ((EditText) findViewById(R.id.add_Name)).setText("");
+                        ((EditText) findViewById(R.id.add_etABV)).setText("");
+                        ((EditText) findViewById(R.id.add_etVolume)).setText("");
                     }
                 });
         AlertDialog alert = builder.create();
