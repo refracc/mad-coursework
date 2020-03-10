@@ -32,13 +32,16 @@ public class Volume extends Activity {
         Drink cider = new Drink("Cider", "4% ~ 7.5%", "586ml", "drawable://" + R.drawable.cider);
         Drink warn = new Drink("*** PLEASE NOTE ***", "All drinks listed are in their", "typical serving amounts.", null);
 
-        drinks.add(absinthe);
-        drinks.add(spirits);
-        drinks.add(shots);
-        drinks.add(wines);
-        drinks.add(beer);
-        drinks.add(lager);
-        drinks.add(cider);
+        for(int i = 0; i < 32; i++) {
+            drinks.add(absinthe);
+            drinks.add(spirits);
+            drinks.add(shots);
+            drinks.add(wines);
+            drinks.add(beer);
+            drinks.add(lager);
+            drinks.add(cider);
+        }
+
         drinks.add(warn);
 
         DrinkAdapter da = new DrinkAdapter(this, R.layout.adapter_layout, drinks);
